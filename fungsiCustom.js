@@ -54,7 +54,7 @@ const processData = (dataset) => {
 
 const bacaData = (fnCallback) => {
   const fileList = [file1, file2, file3]
-  const result = []
+  const hasil = []
 
   fileList.forEach(item => {
     const processItem = new Promise((resolve, reject) => {
@@ -69,11 +69,11 @@ const bacaData = (fnCallback) => {
         resolve(getProcessedItem)
       })
     })
-    result.push(processItem)
+    hasil.push(processItem)
   })
 
-  // call result in callback
-  Promise.all(result).then(values => {
+  // call hasil in callback
+  Promise.all(hasil).then(values => {
     fnCallback(null, values)
   }).catch(error => {
     fnCallback(error, null)
